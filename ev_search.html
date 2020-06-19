@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="UTF-8">
+    <title>EV Search</title>
+    <meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.36.1/maps/maps.css">
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.36.1/maps/maps-web.min.js"></script>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.36.1/services/services-web.min.js"></script>
+    <script src="chargingAvailability.js"></script>
+
+    <style>
+      body, html { margin: 0; padding: 0; }
+      #left, #right {  height: 100vh }
+      #left { float: left; width: 200px; overflow-y: auto; }
+      #right { margin-left: 200px; }
+      #map { width: 100%; height: 100%; }
+      #controls, #summary { padding: 5px; }
+      div.mapboxgl-popup-content>h3 { margin: 0 }
+      input.text { margin-bottom: 5px; }
+      div.clear { clear: both; }
+    </style>
+</head>
+
+<body>
+    <div id="left">
+      <div id="controls">
+        Location:<br/>
+        <input class="text" id="location" type="text" />
+        <br />
+        Maximum Distance (km):<br/>
+        <input class="text" id="distance" type="text" value="10" />
+        <br />
+        <input type="button" value="Find Stations" onclick="findLocation()" />
+      </div>
+    </div>
+    <div id="right">
+      <div id="map" class="map"></div>
+    </div>
+    <div class="clear" />
+
+    <script src="ev_search.js"></script>
+</body>
+</html>
